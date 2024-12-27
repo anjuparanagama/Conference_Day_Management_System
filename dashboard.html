@@ -10,27 +10,31 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav style="background-color:#014f86;">
+	<nav class="left-nav">
         <div class="navi">
-            <div class="logo">IRC 2024</div>
+            <div class="logo">IRC 2024</div><hr/>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <!-- <li><img src="img/main.jpg" alt="home"/><br><a href="#home">Home</a></li> -->
                 <li><a href="#sessions">Sessions</a></li>
                 <li><a href="#speakers">Speakers</a></li>
                 <li><a href="#registration">Registration</a></li>
                 <li><a href="#about">About</a></li>
+				<li><a href="#upcomingsessions">Upcoming Sessions</a></li>
                 <li><a href="#feedback">Feedback</a></li>
+				<li><a href="index.html">Logout</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Main Section -->
-    <header id="home" class="main">
-        <div class="main-content">
-            <h1>International Research Conference <span class="year">2024</span></h1>
-            <p><code>"Advancing Innovations in Information Technology: Shaping the Future of Digital Transformation"</code></p>
-        </div>
-    </header>
+    <!-- Main Content Area -->
+    <div class="main-container">
+        <!-- Main Section -->
+        <header id="home" class="main">
+            <div class="main-content">
+                <h1>International Research Conference <span class="year">2024</span></h1>
+                <p><code>"Advancing Innovations in Information Technology: Shaping the Future of Digital Transformation"</code></p>
+            </div>
+        </header>
 
     <!-- Sessions Section -->
     <section id="sessions" class="sessions">
@@ -44,7 +48,8 @@
 					<span class="presenter-name">Dr. Ishara Dharmasena</span>
 					<img src="img/2.jpg" alt="Dr. Ishara Dharmasena" class="presenter-image">
 				</div>
-                <span class="time">28th Dec. 2024  9:00 am - 09:50 am</span>
+                <span class="time"><b>Venue</b>: T.A.G Multifunctional Hall<br>28th Dec. 2024  9:00 am - 09:50 am</span>
+				<button type="button" onclick="window.location.href='#registration';">Register Session</button>
             </div>
 			
             <div class="session-card">
@@ -55,7 +60,8 @@
 					<span class="presenter-name">Eng. Thusitha perera</span>
 					<img src="img/1.jpg" alt="Eng. thusitha perera" class="presenter-image">
 				</div>
-                <span class="time">28th Dec. 2024  10:00 am - 10:50 am</span>
+                <span class="time"><b>Venue</b>: T.A.G Multifunctional Hall<br>28th Dec. 2024  10:00 am - 10:50 am</span>
+				<button type="button" onclick="window.location.href='#registration';">Register Session</button>
             </div>
 			
             <div class="session-card">
@@ -66,7 +72,8 @@
 					<span class="presenter-name">Eng. Amoda rivindu</span>
 					<img src="img/3.jpg" alt="Eng. Amoda rivindu" class="presenter-image">
 				</div>
-                <span class="time">28th Dec. 2024  11:00 am - 12:00 pm</span>
+                <span class="time"><b>Venue</b>: T.A.G Multifunctional Hall<br>28th Dec. 2024  11:00 am - 12:00 pm</span>
+				<button type="button" onclick="window.location.href='#registration';">Register Session</button>
             </div>
 			
 			<div class="session-card">
@@ -77,7 +84,8 @@
 					<span class="presenter-name">Mrs. P.K.Vidanagamage</span>
 					<img src="img/4.jpg" alt="Mrs. P.K.vidanagamage" class="presenter-image">
 				</div>
-                <span class="time">28th Dec. 2024  01:00 pm - 01:50 pm</span>
+                <span class="time"><b>Venue</b>: T.A.G Multifunctional Hall<br>28th Dec. 2024  01:00 pm - 01:50 pm</span>
+				<button type="button" onclick="window.location.href='#registration';">Register Session</button>
             </div>
 			
             <div class="session-card">
@@ -88,7 +96,8 @@
 					<span class="presenter-name">Prof. P.D.C.Gamage</span>
 					<img src="img/5.jpg" alt="prof. P.D.C.Gamage" class="presenter-image">
 				</div>
-                <span class="time">28th Dec. 2024  02:00 pm - 03:50 pm</span>
+                <span class="time"><b>Venue</b>: T.A.G Multifunctional Hall<br>28th Dec. 2024  02:00 pm - 03:50 pm</span>
+				<button type="button" onclick="window.location.href='#registration';">Register Session</button>
             </div>
 			
             <div class="session-card">
@@ -99,7 +108,8 @@
 					<span class="presenter-name">Dr. T.N.Rathnayake</span>
 					<img src="img/6.jpg" alt="Dr. T.N.Rathnayake" class="presenter-image">
 				</div>
-                <span class="time">28th Dec. 2024  03:00 pm - 4:00 pm</span>
+                <span class="time"><b>Venue</b>: T.A.G Multifunctional Hall<br>28th Dec. 2024  03:00 pm - 4:00 pm</span>
+				<button type="button" onclick="window.location.href='#registration';">Register Session</button>
             </div>
         </div>
     </section>
@@ -177,6 +187,34 @@
                 </div>
             </div>
         </div>
+		<p class="agenda" >You can Download Conference Day Schedule here : <button type="button" onclick="window.location.href='agenda.pdf';">Download Agenda</button></p>
+    </section>
+	
+	<section id="upcomingsessions" class="sessions">
+	<h2>Upcoming Sessions</h2>
+	<div class="session-cards">
+		<div class="session-card">
+			<div class="session-icon">🛰</div>
+			<h3>Artificial Intelligence and Machine Learning </h3>
+			<p><b>(Keynote Speech)</b></p>
+			<div class="presenter-info">
+				<span class="presenter-name">Dr. Ishara Dharmasena</span>
+				<img src="img/2.jpg" alt="Dr. Ishara Dharmasena" class="presenter-image">
+			</div>
+			<span class="time">28th Dec. 2024  9:00 am - 09:50 am</span>
+		</div>
+		
+		<div class="session-card">
+            <div class="session-icon">🚀</div>
+                <h3>5G and Next-Generation Networks</h3>
+                <p></p>
+				<div class="presenter-info">
+					<span class="presenter-name">Dr. T.N.Rathnayake</span>
+					<img src="img/6.jpg" alt="Dr. T.N.Rathnayake" class="presenter-image">
+				</div>
+                <span class="time">28th Dec. 2024  03:00 pm - 4:00 pm</span>
+            </div>
+        </div>
     </section>
 
     <!-- Feedback Section -->
@@ -197,6 +235,7 @@
 		<a href="#session" ><img src="img/twitter.png" class="s-icon"/></a>  
 		<a href="#session" ><img src="img/linkedin.png" class="s-icon"/></a></p>
 	<section>
+	</div>
 	
     <footer>
         <p>&copy; IRC 2024. All rights reserved.</p>
