@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRC system login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url('img/main.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 32px;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-container {
+            width: 100%;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 24px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            color: #666;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+		
+		.tabs button:hover {
+			background-color:rgba(255, 255, 255, 0.95);
+		}
+
+        .tab.active {
+            border-bottom: 2px solid #133E87;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 24px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+
+        input {
+			margin:5px;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+			background-color:white;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #764ba2;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #133E87;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #667eea;
+        }
+
+        #registerForm {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+                width: 90%;
+            }
+
+            .form-title {
+                font-size: 20px;
+            }
+
+            input, button {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px;
+                margin: 8px;
+            }
+
+            .form-title {
+                font-size: 18px;
+            }
+
+            input, button {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="tabs">
+                <button class="tab active" onclick="showForm('login')">Login</button>
+                <button class="tab" onclick="showForm('register')">Register</button>
+            </div>
+
+            <form id="loginForm" method="POST" action="login.php">
+                <h2 class="form-title">Welcome to <br><span style="font-size:24px;">IRC 2024 !</span></h2>
+                <div class="form-group">
+                    <input type="email" id="loginEmail" name="email" placeholder="E-mail" required>
+                    <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+
+            <form id="registerForm" method="POST" action="auth.php">
+                <h2 class="form-title">Create Account</h2>
+                <div class="form-group">
+                    <input type="text" id="registerName" name="full_name" placeholder="Name" required>
+                    <input type="email" id="registerEmail" name="email" placeholder="E-mail Address" required>
+                    <input type="text" id="registerPhone" name="phone_number" placeholder="Phone Number" required>
+                    <input type="text" id="registerOrg" name="organization" placeholder="Organization / Institution" required>
+                    <input type="password" id="registerPassword" name="password" placeholder="Password"  required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showForm(formType) {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const tabs = document.querySelectorAll('.tab');
+            
+            if (formType === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                tabs[0].classList.add('active');
+                tabs[1].classList.remove('active');
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                tabs[0].classList.remove('active');
+                tabs[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>

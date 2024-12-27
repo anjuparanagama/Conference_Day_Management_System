@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin_dashboard.css">
+</head>
+<body>
+
+<!-- Left Navigation Bar -->
+<div class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+        <li><a href="#session-table">Sessions</a></li>
+        <li><a href="#participant-table">Participants</a></li>
+        <li><a href="#feedback-section">Feedbacks</a></li>
+        <li><a href="http://localhost/web/dashboard.html#home">Participant Dashboard</a></li>
+    </ul>
+</div>
+
+<!-- Main Dashboard Container -->
+<div class="dashboard-container">
+    <h1>Admin Dashboard</h1>
+
+    <!-- Session Table -->
+    <div class="session-table" id="session-table">
+        <h2>Sessions</h2>
+        <table id="sessions-table">
+            <thead>
+                <tr>
+                    <th>Session ID</th>
+                    <th>Session Title</th>
+                    <th>Registered Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Session data will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Participant Table -->
+    <div class="participant-table" id="participant-table">
+        <h2>Participants</h2>
+        <table id="participants-table">
+            <thead>
+                <tr>
+                    <th>Participant Name</th>
+                    <th>Email</th>
+                    <th>Session Registered</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Participant data will be Displayed here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Feedback Table -->
+    <div class="feedback-table" id="feedback-section">
+        <h2>Feedback</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Feedback</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Feedback data will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+fetch('admin.php')
+    .then(response => response.json())
+    .then(data => {
+        // Display sessions data
+        const sessionTable = document.getElementById('sessions-table').getElementsByTagName('tbody')[0];
+        data.sessions.forEach(session => {
+            const row = sessionTable.insertRow();
+            row.innerHTML = `<td>${session.session_id}</td><td>${session.title}</td><td>${session.registered_count}</td>`;
+        });
+
+        // Display participants data
+        const participantTable = document.getElementById('participants-table').getElementsByTagName('tbody')[0];
+        data.participants.forEach(participant => {
+            const row = participantTable.insertRow();
+            row.innerHTML = `<td>${participant.name}</td><td>${participant.email}</td><td>${participant.session_title}</td><td><a href='delete_participant.php?participant_id=${participant.participant_id}'>Delete</a></td>`;
+        });
+
+        // Display feedback data
+        const feedbackTable = document.querySelector('#feedback-section tbody');
+        data.feedback.forEach(feedback => {
+            const row = feedbackTable.insertRow();
+            row.innerHTML = `<td>${feedback.name}</td><td>${feedback.feedback}</td>`;
+        });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+</script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRC 2024</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav style="background-color:#014f86;">
+        <div class="navi">
+            <div class="logo">IRC 2024</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sessions">Sessions</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#registration">Registration</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <header id="home" class="main">
+        <div class="main-content">
+            <h1>International Research Conference <span class="year">2024</span></h1>
+            <p><code>"Advancing Innovations in Information Technology: Shaping the Future of Digital Transformation"</code></p>
+        </div>
+    </header>
+
+    <!-- Sessions Section -->
+    <section id="sessions" class="sessions">
+        <h2>Conference Sessions</h2>
+        <div class="session-cards">
+            <div class="session-card">
+                <div class="session-icon">🛰</div>
+                <h3>Artificial Intelligence and Machine Learning </h3>
+                <p><b>(Keynote Speech)</b></p>
+				<div class="presenter-info">
+					<span class="presenter-name">Dr. Ishara Dharmasena</span>
+					<img src="img/2.jpg" alt="Dr. Ishara Dharmasena" class="presenter-image">
+				</div>
+                <span class="time">28th Dec. 2024  9:00 am - 09:50 am</span>
+            </div>
+			
+            <div class="session-card">
+                <div class="session-icon">⛓</div>
+                <h3>Blockchain and Decentralized Systems</h3>
+                <p><b>(Keynote Speech)</b></p>
+				<div class="presenter-info">
+					<span class="presenter-name">Eng. Thusitha perera</span>
+					<img src="img/1.jpg" alt="Eng. thusitha perera" class="presenter-image">
+				</div>
+                <span class="time">28th Dec. 2024  10:00 am - 10:50 am</span>
+            </div>
+			
+            <div class="session-card">
+                <div class="session-icon">🌍</div>
+                <h3>Cloud Computing and Edge Technologiess</h3>
+                <p><b>(Keynote Speech)</b></p>
+				<div class="presenter-info">
+					<span class="presenter-name">Eng. Amoda rivindu</span>
+					<img src="img/3.jpg" alt="Eng. Amoda rivindu" class="presenter-image">
+				</div>
+                <span class="time">28th Dec. 2024  11:00 am - 12:00 pm</span>
+            </div>
+			
+			<div class="session-card">
+                <div class="session-icon">🕹</div>
+                <h3>Internet of Things (IoT)</h3>
+                <p></p>
+				<div class="presenter-info">
+					<span class="presenter-name">Mrs. P.K.Vidanagamage</span>
+					<img src="img/4.jpg" alt="Mrs. P.K.vidanagamage" class="presenter-image">
+				</div>
+                <span class="time">28th Dec. 2024  01:00 pm - 01:50 pm</span>
+            </div>
+			
+            <div class="session-card">
+                <div class="session-icon">📲</div>
+                <h3>Cybersecurity and Privacy</h3>
+                <p></p>
+				<div class="presenter-info">
+					<span class="presenter-name">Prof. P.D.C.Gamage</span>
+					<img src="img/5.jpg" alt="prof. P.D.C.Gamage" class="presenter-image">
+				</div>
+                <span class="time">28th Dec. 2024  02:00 pm - 03:50 pm</span>
+            </div>
+			
+            <div class="session-card">
+                <div class="session-icon">🚀</div>
+                <h3>5G and Next-Generation Networks</h3>
+                <p></p>
+				<div class="presenter-info">
+					<span class="presenter-name">Dr. T.N.Rathnayake</span>
+					<img src="img/6.jpg" alt="Dr. T.N.Rathnayake" class="presenter-image">
+				</div>
+                <span class="time">28th Dec. 2024  03:00 pm - 4:00 pm</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="speakers">
+        <h2>Keynote Speakers</h2>
+        <div class="speaker-grid">
+            <div class="speaker-card">
+                <img src="img/1.jpg" class="speaker-image" id="speaker1"/>
+                <h3>Eng. thusitha perera</h3>
+                <p>Department of Information Technology<br/>
+				   University of Moratuwa</p>
+            </div>
+            <div class="speaker-card">
+                <img src="img/2.jpg" class="speaker-image" id="speaker1"/>
+                <h3>Dr. Ishara Dharmasena</h3>
+                <p>Wolfson School of Mechanical, Electrical &
+					Manufacturing Engineering
+					Loughborough University, England</p>
+            </div>
+            <div class="speaker-card">
+                <<img src="img/3.jpg" class="speaker-image" id="speaker1"/>
+                <h3>Eng. Amoda rivindu</h3>
+                <p>Department of electrical and
+					electronic Engineering
+					University of Ruhuna</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="registration">
+        <h2>Session Registration</h2>
+        <form action="register.php" method="POST"  class="feedback-form">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+			<input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+			<input type="text" id="institution" name="institution" placeholder = "Institute or Organization" required> 
+			<select id="session" name="session" required>
+				<option value="">Select Session</option>
+				<option value="1">Artificial Intelligence and Machine Learning</option>
+				<option value="2">Blockchain and Decentralized Systems</option>
+				<option value="3">Cloud Computing and Edge Technologies</option>
+				<option value="4">Internet of Things (IoT)s</option>
+				<option value="5">Cybersecurity and Privacy</option>
+				<option value="6">5G and Next-Generation Networks</option>
+			</select><br>
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Welcome to the First International Research Conference (IRC) on Information Technology. Our conference serves as a global platform for researchers, industry professionals, and thought leaders to explore the latest advancements in the ever-evolving IT landscape.</p>
+                <br/><p>The IRC aims to foster collaboration, innovation, and knowledge exchange in areas such as artificial intelligence, cybersecurity, data science, cloud computing, and software engineering. By bringing together experts from diverse backgrounds, we provide a space for sharing cutting-edge research, innovative solutions, and emerging trends that are shaping the future of technology.</p>
+				<br/><p>We are proud to be at the forefront of IT research and development, hosting sessions, workshops, and discussions that push the boundaries of what is possible in the tech world. Whether you are a researcher, academic, or practitioner, the IRC offers valuable opportunities to network, learn, and contribute to the global IT community.</p>
+				<br/><p>Join us as we make history in the Information Technology field and pave the way for new breakthroughs that will impact industries worldwide.</p>
+			</div>
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="number">500+</span>
+                    <span class="label">Attendees</span>
+                </div>
+                <div class="stat">
+                    <span class="number">50+</span>
+                    <span class="label">Companies</span>
+                </div>
+                <div class="stat">
+                    <span class="number">10+</span>
+                    <span class="label">Countries</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="feedback">
+        <h2>Submit Feedback</h2>
+        <form class="feedback-form" action="feedback.php" method="POST">
+            <input type="text" id="nameform" name="nameform" placeholder="Name" required>
+            <textarea id="feedback" name="feedback" placeholder="Your feedback" required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+	
+	<!-- social media Section -->
+	<section class="social">
+		<p>Follow Us on : 
+		<a href="#session" ><img src="img/facebook.png" class="s-icon"/></a>  
+		<a href="#session" ><img src="img/yt.png" class="s-icon"/></a>  
+		<a href="#session" ><img src="img/twitter.png" class="s-icon"/></a>  
+		<a href="#session" ><img src="img/linkedin.png" class="s-icon"/></a></p>
+	<section>
+	
+    <footer>
+        <p>&copy; IRC 2024. All rights reserved.</p>
+    </footer>
+</body>
+</html>
